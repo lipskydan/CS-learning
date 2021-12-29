@@ -1,0 +1,15 @@
+/Users/danial/Desktop/Udemy C# tasks/bin/Debug/net5.0/Udemy C# tasks.deps.json
+/Users/danial/Desktop/Udemy C# tasks/bin/Debug/net5.0/Udemy C# tasks.runtimeconfig.json
+/Users/danial/Desktop/Udemy C# tasks/bin/Debug/net5.0/Udemy C# tasks.runtimeconfig.dev.json
+/Users/danial/Desktop/Udemy C# tasks/bin/Debug/net5.0/Udemy C# tasks.dll
+/Users/danial/Desktop/Udemy C# tasks/bin/Debug/net5.0/ref/Udemy C# tasks.dll
+/Users/danial/Desktop/Udemy C# tasks/bin/Debug/net5.0/Udemy C# tasks.pdb
+/Users/danial/Desktop/Udemy C# tasks/obj/Debug/net5.0/Udemy C# tasks.csproj.AssemblyReference.cache
+/Users/danial/Desktop/Udemy C# tasks/obj/Debug/net5.0/Udemy C# tasks.GeneratedMSBuildEditorConfig.editorconfig
+/Users/danial/Desktop/Udemy C# tasks/obj/Debug/net5.0/Udemy C# tasks.AssemblyInfoInputs.cache
+/Users/danial/Desktop/Udemy C# tasks/obj/Debug/net5.0/Udemy C# tasks.AssemblyInfo.cs
+/Users/danial/Desktop/Udemy C# tasks/obj/Debug/net5.0/Udemy C# tasks.csproj.CoreCompileInputs.cache
+/Users/danial/Desktop/Udemy C# tasks/obj/Debug/net5.0/Udemy C# tasks.dll
+/Users/danial/Desktop/Udemy C# tasks/obj/Debug/net5.0/ref/Udemy C# tasks.dll
+/Users/danial/Desktop/Udemy C# tasks/obj/Debug/net5.0/Udemy C# tasks.pdb
+/Users/danial/Desktop/Udemy C# tasks/obj/Debug/net5.0/Udemy C# tasks.genruntimeconfig.cache
