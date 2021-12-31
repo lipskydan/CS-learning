@@ -9,6 +9,7 @@ namespace Udemy_Unit8__tasks
     {
 
         readonly String pathToWordsStock = "FileForGallows/WordsStockRus.txt";
+        private int counterAttempts;
         private String hiddenWord;
 
         private List<char> possibleWord;
@@ -26,10 +27,13 @@ namespace Udemy_Unit8__tasks
             hiddenWord = lines[new Random().Next(0, lines.Length-1)];
         }
 
-        public Gallows()
+        public Gallows(int counterAttempts = 6)
         {
+            this.counterAttempts = counterAttempts;
+
             SetHiddenWord();
-            Console.WriteLine("[Gallows:Gallows()] Computer set hidden word");
+            Console.WriteLine("Computer set hidden word");
+
             possibleWord = new List<char>();
             for(int i=0; i<hiddenWord.Length; i++){possibleWord.Add('_');}
         }
@@ -38,26 +42,45 @@ namespace Udemy_Unit8__tasks
 
         public void ShowGuessedWord() 
         {
-            Console.Write($"[Gallows:ShowGuessedWord()] Guessed word is");
-            foreach(char el in possibleWord)
-            {
-                Console.Write($" {el}");
-            }
+            Console.Write($"Guessed word is");
+            foreach(char el in possibleWord){Console.Write($" {el}");}
             Console.WriteLine();
         }
+
+        public void ShowCounterAttempts(){Console.WriteLine($"You have {counterAttempts} attempts");}
 
         public void SetPossibleLetter(char possibleLetter)
         {
             if(HiddenWord.Contains(possibleLetter))
+            {
                 for(int i=0; i<HiddenWord.Length; i++)
-                    if (HiddenWord[i] == possibleLetter){possibleWord[i] = possibleLetter;}
+                {
+                    if (HiddenWord[i] == possibleLetter)
+                    {
+                        possibleWord[i] = possibleLetter;
+                    }
+                }
+            }
+            else
+            {
+                counterAttempts--;
+            }
+                
         }
 
         public void Game()
         {
-            Console.Write("Please, input possible letter: ");
-            char possibleLetter = Convert.ToChar(Console.Read());
-            SetPossibleLetter(possibleLetter);
+            ShowHiddenWord();
+            ShowGuessedWord();
+
+            while(counterAttempts > 0)
+            {
+                Console.Write("Please, input possible letter: ");
+                char possibleLetter = Convert.ToChar(Console.Read());
+                SetPossibleLetter(possibleLetter);
+                ShowGuessedWord();
+            }
+            
         }
 
     }
