@@ -49,13 +49,7 @@ namespace Udemy_C__tasks
         // ticTacToe.Play();
 
         Gallows gallows = new Gallows();
-        gallows.ShowHiddenWord();
-        gallows.ShowGuessedWord();
-        Console.Write("el = ");
-        char el = Convert.ToChar(Console.Read());
-        gallows.SetPossibleLetter(possibleLetter: el);
-        gallows.ShowHiddenWord();
-        gallows.ShowGuessedWord();
+        gallows.Game();
 
         }
     }

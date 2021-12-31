@@ -32,22 +32,22 @@ namespace Udemy_Unit8__tasks
             this.counterAttempts = counterAttempts;
 
             SetHiddenWord();
-            Console.WriteLine("Computer set hidden word");
+            Console.WriteLine($"Computer set hidden word {HiddenWord} \n");
 
             possibleWord = new List<char>();
             for(int i=0; i<hiddenWord.Length; i++){possibleWord.Add('_');}
         }
 
-        public void ShowHiddenWord(){Console.WriteLine($"Hidden word is {HiddenWord}");}
+        public void ShowHiddenWord(){Console.WriteLine($"Hidden word is {HiddenWord}\n");}
 
         public void ShowGuessedWord() 
         {
             Console.Write($"Guessed word is");
             foreach(char el in possibleWord){Console.Write($" {el}");}
-            Console.WriteLine();
+            Console.WriteLine("\n");
         }
 
-        public void ShowCounterAttempts(){Console.WriteLine($"You have {counterAttempts} attempts");}
+        public void ShowCounterAttempts(){Console.WriteLine($"You have {counterAttempts} attempts\n");}
 
         public void SetPossibleLetter(char possibleLetter)
         {
@@ -63,22 +63,39 @@ namespace Udemy_Unit8__tasks
             }
             else
             {
-                counterAttempts--;
+                --counterAttempts;
             }
                 
         }
 
         public void Game()
         {
-            ShowHiddenWord();
-            ShowGuessedWord();
-
-            while(counterAttempts > 0)
+            
+            while(true)
             {
-                Console.Write("Please, input possible letter: ");
-                char possibleLetter = Convert.ToChar(Console.Read());
-                SetPossibleLetter(possibleLetter);
+                if(counterAttempts == 0 || possibleWord.Contains('_') == false) break;
+               
                 ShowGuessedWord();
+                ShowCounterAttempts();
+
+                Console.Write("Please, input possible letter: ");
+                char possibleLetter = Convert.ToChar(Console.ReadLine());
+                SetPossibleLetter(possibleLetter);
+                
+                Console.WriteLine("\n");
+                
+            }
+
+            if(counterAttempts == 0)
+            {
+                Console.WriteLine("YOU LOST :ь\n");
+                 ShowHiddenWord();
+            }
+            else
+            {
+                Console.WriteLine("YOU WON :)\n");
+                ShowGuessedWord();
+                ShowHiddenWord();
             }
             
         }
