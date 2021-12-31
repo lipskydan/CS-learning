@@ -45,8 +45,17 @@ namespace Udemy_C__tasks
         // guessNumber.PlayGame(whoGuessNumber: human1, whoFindNumber: human2);
 
         
-        TicTacToe ticTacToe = new TicTacToe(gamer1: new Gamer("Danyil", "X"), gamer2: new Gamer("Olga", "O"));
-        ticTacToe.Play();
+        // TicTacToe ticTacToe = new TicTacToe(gamer1: new Gamer("Danyil", "X"), gamer2: new Gamer("Olga", "O"));
+        // ticTacToe.Play();
+
+        Gallows gallows = new Gallows();
+        gallows.ShowHiddenWord();
+        gallows.ShowGuessedWord();
+        Console.Write("el = ");
+        char el = Convert.ToChar(Console.Read());
+        gallows.SetPossibleLetter(possibleLetter: el);
+        gallows.ShowHiddenWord();
+        gallows.ShowGuessedWord();
 
         }
     }
