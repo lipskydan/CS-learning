@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "KBavE2Y30JJXNXXbu9nZdfQZXzO/71w/7wk+OP4SW3Fk4tu3tHBKKSWe/sHj03Hx2lNMaaKfllswmcbnIvFA5w==",
+  "dgSpecHash": "LYw0ZNyq/R+/QfE2ys67DJxHmSEm7ZmHxmVZdBQ9hT6YsK+lHLjdq9rXVvjOZYV8MrwGPaFkAg8Jzu+dy/tjyw==",
   "success": true,
-  "projectFilePath": "/Users/danial/Documents/git/CS-learning/Udemy-C#-tasks/Udemy C# tasks.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\Danyil.Lipskyi\\source\\repos\\lipskydan\\CS-learning\\Udemy-C#-tasks\\Udemy C# tasks.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Danyil.Lipskyi\\.nuget\\packages\\microsoft.netcore.app.ref\\5.0.0\\microsoft.netcore.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\Danyil.Lipskyi\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\5.0.0\\microsoft.windowsdesktop.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\Danyil.Lipskyi\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\5.0.0\\microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\Danyil.Lipskyi\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.13\\microsoft.netcore.app.host.win-x64.5.0.13.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -32,7 +32,7 @@ namespace Udemy_Unit8__tasks
             this.counterAttempts = counterAttempts;
 
             SetHiddenWord();
-            Console.WriteLine($"Computer set hidden word {HiddenWord} \n");
+            Console.WriteLine($"Computer set hidden word\n");
 
             possibleWord = new List<char>();
             for(int i=0; i<hiddenWord.Length; i++){possibleWord.Add('_');}
@@ -79,8 +79,22 @@ namespace Udemy_Unit8__tasks
                 ShowCounterAttempts();
 
                 Console.Write("Please, input possible letter: ");
-                char possibleLetter = Convert.ToChar(Console.ReadLine());
-                SetPossibleLetter(possibleLetter);
+
+                try
+                {
+                    char possibleLetter = Convert.ToChar(Console.ReadLine());
+                    SetPossibleLetter(possibleLetter);
+                }
+                catch (System.Exception)
+                {
+                    
+                }
+
+
+                // Console.Write("Please, input possible letter: ");
+                // // char.TryParse(Console.ReadLine(), out char possibleLetter);
+                // // char possibleLetter = Convert.ToChar(Console.ReadLine());
+                // SetPossibleLetter(possibleLetter);
                 
                 Console.WriteLine("\n");
                 
