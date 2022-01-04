@@ -48,9 +48,52 @@ namespace Udemy_C__tasks
         // TicTacToe ticTacToe = new TicTacToe(gamer1: new Gamer("Danyil", "X"), gamer2: new Gamer("Olga", "O"));
         // ticTacToe.Play();
 
-        Gallows gallows = new Gallows();
-        gallows.Game();
+        // Gallows gallows = new Gallows();
+        // gallows.Game();
 
+        SticksGame sticksGame = new SticksGame(10, PlayerOfStickGame.Human);
+
+        sticksGame.ComputerAction += Game_ComputerAction;
+        sticksGame.HumanAction += Game_HumanAction;
+        sticksGame.EndOfGame += Game_EndOfGame;
+
+        sticksGame.Start();
+        }
+
+        public static void Game_EndOfGame(PlayerOfStickGame player)
+        {
+            Console.WriteLine($"Winner is {player}");
+        }
+
+        public static void Game_ComputerAction(int sticks)
+        {
+            Console.WriteLine($"Computer took {sticks} sticks");
+        }
+
+        public static void Game_HumanAction(object sticksGame, int sticks)
+        {
+            Console.WriteLine($"Remaining sticks = {sticks}");
+            Console.Write("Take some sticks: ");
+
+            bool takenCorrectly = false;
+
+            while(!takenCorrectly)
+            {
+                if(int.TryParse(Console.ReadLine(), out int takenSticks))
+                {
+                    var game = (SticksGame)sticksGame;
+                    
+                    try 
+                    {
+                        game.HumanTakes(takenSticks);
+                        takenCorrectly = true;
+                    }
+                    catch(ArgumentException ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                    }
+                }
+            }
         }
     }
 }
