@@ -3,6 +3,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
+/*
+ДЗ "Игроки в шахматы"
+Используя файл с ТОП100 шахматных игроков, 
+найти всех игроков из России и отсортировать 
+их по году рождения по возрастанию.
+*/
+
 namespace Udemy_Unit8__tasks
 {
     class ChessPlayer
