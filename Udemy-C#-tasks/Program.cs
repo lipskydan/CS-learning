@@ -5,6 +5,8 @@ using Udemy_Unit3__tasks;
 using Udemy_Unit5__tasks;
 using Udemy_Unit8__tasks;
 
+using System.Collections.Generic;
+
 namespace Udemy_C__tasks
 {
     class Program
@@ -51,14 +53,19 @@ namespace Udemy_C__tasks
         // Gallows gallows = new Gallows();
         // gallows.Game();
 
-        SticksGame sticksGame = new SticksGame(10, PlayerOfStickGame.Human);
+        // SticksGame sticksGame = new SticksGame(10, PlayerOfStickGame.Human);
 
-        sticksGame.ComputerAction += Game_ComputerAction;
-        sticksGame.HumanAction += Game_HumanAction;
-        sticksGame.EndOfGame += Game_EndOfGame;
+        // sticksGame.ComputerAction += Game_ComputerAction;
+        // sticksGame.HumanAction += Game_HumanAction;
+        // sticksGame.EndOfGame += Game_EndOfGame;
 
-        sticksGame.Start();
+        // sticksGame.Start();
+
+        List<ChessPlayer> list = ChessPlayer.FindPayersFromRussiaAndSortByAge("Top100ChessPlayers.csv");
+        ChessPlayer.ShowList(list);
         }
+
+
 
         public static void Game_EndOfGame(PlayerOfStickGame player)
         {
