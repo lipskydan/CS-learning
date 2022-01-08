@@ -33,22 +33,19 @@ namespace Udemy_Unit8__tasks
         public string Answer {get; private set;}
         public string Hint {get; private set;}
 
-        public static Quiz GetDataFromLineOfCsv(string line)
-        {
-            string[] data = line.Split(';');
-
-            return new Quiz()
-            {
-                Question = data[0].Trim(),
-                Answer = data[1].Trim(),
-                Hint = data[2].Trim()
-            };
-        }
-
         public static List<Quiz> GetListQuestionAnswerHint(string file)
         {
             return File.ReadAllLines(file)
-                       .Select(GetDataFromLineOfCsv)
+                       .Select(line => 
+                        {
+                            string[] data = line.Split(';');
+                            return new Quiz()
+                            {
+                                Question = data[0].Trim(),
+                                Answer = data[1].Trim(),
+                                Hint = data[2].Trim()
+                            };
+                        })
                        .ToList();
         }
     }
@@ -67,34 +64,12 @@ namespace Udemy_Unit8__tasks
     }
     class GameBelieveOrNo
     {
-        public int Attempts
-        {
-            get; set;
-        }
-        public int RemainingAttempts
-        {
-            get; set;
-        }
-
-        public int QuantityOfQuestion
-        {
-            get; set;
-        }
-
-        public int CountOfCorrectAnswers
-        {
-            get; set;
-        }
-
-        public PlayerOfGameBelieveOrNo Turn
-        {
-            get; set;
-        }
-
-        public GameStatusBelieveOrNo GameStatus
-        {
-            get; set;
-        }
+        public int Attempts {get; set;}
+        public int RemainingAttempts {get; set;}
+        public int QuantityOfQuestion {get; set;}
+        public int CountOfCorrectAnswers {get; set;}
+        public PlayerOfGameBelieveOrNo Turn {get; set;}
+        public GameStatusBelieveOrNo GameStatus {get; set;}
         public List<Quiz> listBelieveOrNo;
         public Quiz currBelieveOrNo;
         public event EventHandler<Quiz> HumanAction;
@@ -178,12 +153,6 @@ namespace Udemy_Unit8__tasks
         {
             if(RemainingAttempts == 0) return PlayerOfGameBelieveOrNo.Computer;
             return PlayerOfGameBelieveOrNo.Human;
-        }
-
-        public static bool IsEmpty<T>(List<T> list)
-        {
-            if (list == null) return true;
-            return list.Count == 0;
         }
     }
 }
