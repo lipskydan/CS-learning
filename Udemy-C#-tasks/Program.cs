@@ -61,44 +61,87 @@ namespace Udemy_C__tasks
 
         // sticksGame.Start();
 
-        List<ChessPlayer> list = ChessPlayer.FindPayersFromRussiaAndSortByAge("Top100ChessPlayers.csv");
-        ChessPlayer.ShowList(list);
+        // List<ChessPlayer> list = ChessPlayer.FindPayersFromRussiaAndSortByAge("Top100ChessPlayers.csv");
+        // ChessPlayer.ShowList(list);
+
+        GameBelieveOrNo gameBelieveOrNo = new GameBelieveOrNo(file:"Questions.csv");
+        gameBelieveOrNo.ComputerAction += Quiz_ComputerAction;
+        gameBelieveOrNo.HumanAction += Quiz_HumanAction;
+        gameBelieveOrNo.EndOfGame += Quiz_EndOfGame;
+
+        gameBelieveOrNo.Game();
         }
 
 
 
-        public static void Game_EndOfGame(PlayerOfStickGame player)
+        // public static void Game_EndOfGame(PlayerOfStickGame player)
+        // {
+        //     Console.WriteLine($"Winner is {player}");
+        // }
+
+        // public static void Game_ComputerAction(int sticks)
+        // {
+        //     Console.WriteLine($"Computer took {sticks} sticks");
+        // }
+
+        // public static void Game_HumanAction(object sticksGame, int sticks)
+        // {
+        //     Console.WriteLine($"Remaining sticks = {sticks}");
+        //     Console.Write("Take some sticks: ");
+
+        //     bool takenCorrectly = false;
+
+        //     while(!takenCorrectly)
+        //     {
+        //         if(int.TryParse(Console.ReadLine(), out int takenSticks))
+        //         {
+        //             var game = (SticksGame)sticksGame;
+                    
+        //             try 
+        //             {
+        //                 game.HumanTakes(takenSticks);
+        //                 takenCorrectly = true;
+        //             }
+        //             catch(ArgumentException ex)
+        //             {
+        //                 Console.WriteLine(ex.Message);
+        //             }
+        //         }
+        //     }
+        // }
+
+        public static void Quiz_EndOfGame(PlayerOfGameBelieveOrNo player)
         {
             Console.WriteLine($"Winner is {player}");
         }
 
-        public static void Game_ComputerAction(int sticks)
+        public static void Quiz_ComputerAction(object gameBelieveOrNo, Quiz currBelieveOrNo)
         {
-            Console.WriteLine($"Computer took {sticks} sticks");
+            Console.WriteLine($"[Computer] {currBelieveOrNo.Question}");
         }
 
-        public static void Game_HumanAction(object sticksGame, int sticks)
+        public static void Quiz_HumanAction(object gameBelieveOrNo, Quiz quize)
         {
-            Console.WriteLine($"Remaining sticks = {sticks}");
-            Console.Write("Take some sticks: ");
-
-            bool takenCorrectly = false;
-
-            while(!takenCorrectly)
+            var game = (GameBelieveOrNo)gameBelieveOrNo;
+            string humanAnswer;
+            while(game.RemainingAttempts != 0)
             {
-                if(int.TryParse(Console.ReadLine(), out int takenSticks))
+                Console.WriteLine("[Human] Input your answer (yes/no): ");
+                humanAnswer = Console.ReadLine();
+
+                if (humanAnswer.ToLower() == quize.Answer.ToLower())
                 {
-                    var game = (SticksGame)sticksGame;
-                    
-                    try 
+                    game.CountOfCorrectAnswers++;
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine($"[Computer] Your answer is NOT currect");
+                    if(game.RemainingAttempts > 1) 
                     {
-                        game.HumanTakes(takenSticks);
-                        takenCorrectly = true;
+                        Console.WriteLine($"[Computer] HINT: {quize.Hint}");
                     }
-                    catch(ArgumentException ex)
-                    {
-                        Console.WriteLine(ex.Message);
-                    }
+                    game.RemainingAttempts--;
                 }
             }
         }
