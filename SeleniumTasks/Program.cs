@@ -43,10 +43,31 @@ namespace SeleniumTasks
 
             driver.Quit();
         }
+
+        public static void FindElementByClassName(string url, string className)
+        {
+            IWebDriver driver = new ChromeDriver();
+            driver.Navigate().GoToUrl(url);
+
+            IWebElement element = driver.FindElement(By.ClassName(className));
+            if(element.Displayed)
+            {
+                MessageToConsole.GreenMessage("[FindElementByClassName] YES");
+                MessageToConsole.GreenMessage($"[FindElementByClassName] {element.Text}");
+            }
+            else
+            {
+                MessageToConsole.RedMessage("[FindElementByClassName] NO");
+            }
+
+            driver.Quit();
+        }
+        
         static void Main()
         {
-            FindElementByName(url:"https://testing.todorvachev.com/name/", name:"myName");
-            FindElementById(url:"https://testing.todorvachev.com/id/", id:"testImage");
+            // FindElementByName(url:"https://testing.todorvachev.com/name/", name:"myName");
+            // FindElementById(url:"https://testing.todorvachev.com/id/", id:"testImage");
+            FindElementByClassName(url:"https://testing.todorvachev.com/class-name/", className: "testClass");
         }
     }
 }
