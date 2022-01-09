@@ -31,6 +31,7 @@ namespace SeleniumTasks
             driver.Navigate().GoToUrl(url);
 
             IWebElement element = driver.FindElement(By.Id(id));
+
             if(element.Displayed)
             {
                 MessageToConsole.GreenMessage("[FindElementById] YES");
@@ -49,6 +50,7 @@ namespace SeleniumTasks
             driver.Navigate().GoToUrl(url);
 
             IWebElement element = driver.FindElement(By.ClassName(className));
+
             if(element.Displayed)
             {
                 MessageToConsole.GreenMessage("[FindElementByClassName] YES");
@@ -61,5 +63,44 @@ namespace SeleniumTasks
 
             driver.Quit();
         }
+
+        public static void FindElementByCssPath(string url, string cssPath)
+        {
+            IWebDriver driver = new ChromeDriver();
+            driver.Navigate().GoToUrl(url);
+
+            IWebElement element = driver.FindElement(By.CssSelector(cssPath));
+
+            if(element.Displayed)
+            {
+                MessageToConsole.GreenMessage("[FindElementByCssPath] YES");
+            }
+            else
+            {
+                MessageToConsole.RedMessage("[FindElementByCssPath] NO");
+            }
+
+            driver.Quit();
+        }
+
+        public static void FindElementByXPath(string url, string xPath)
+        {
+            IWebDriver driver = new ChromeDriver();
+            driver.Navigate().GoToUrl(url);
+
+            IWebElement element = driver.FindElement(By.XPath(xPath));
+
+            if(element.Displayed)
+            {
+                MessageToConsole.GreenMessage("[FindElementByXPath] YES");
+            }
+            else
+            {
+                MessageToConsole.RedMessage("[FindElementByXPath] NO");
+            }
+
+            driver.Quit();
+        }
+        
     }
 }
