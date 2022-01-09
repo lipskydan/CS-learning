@@ -8,16 +8,21 @@ namespace SeleniumTasks
     {
         public static void FindElementByName(string url, string name)
         {
-            IWebDriver driver = new ChromeDriver();
-            driver.Navigate().GoToUrl(url);
+           IWebDriver driver = new ChromeDriver();
+           driver.Navigate().GoToUrl(url);
+           IWebElement element;
 
-            IWebElement element = driver.FindElement(By.Name(name));
-
-            if(element.Displayed)
+            try
             {
-                MessageToConsole.GreenMessage("[FindElementByName] YES");
+                element = driver.FindElement(By.Name(name));
+
+                if(element.Displayed)
+                {
+                    MessageToConsole.GreenMessage("[FindElementByName] YES");
+                }
+            
             }
-            else
+            catch(NoSuchElementException)
             {
                 MessageToConsole.RedMessage("[FindElementByName] NO");
             }
@@ -27,16 +32,21 @@ namespace SeleniumTasks
 
         public static void FindElementById(string url, string id)
         {
-            IWebDriver driver = new ChromeDriver();
-            driver.Navigate().GoToUrl(url);
+           IWebDriver driver = new ChromeDriver();
+           driver.Navigate().GoToUrl(url);
+           IWebElement element;
 
-            IWebElement element = driver.FindElement(By.Id(id));
-
-            if(element.Displayed)
+            try
             {
-                MessageToConsole.GreenMessage("[FindElementById] YES");
+                element = driver.FindElement(By.Id(id));
+
+                if(element.Displayed)
+                {
+                    MessageToConsole.GreenMessage("[FindElementById] YES");
+                }
+            
             }
-            else
+            catch(NoSuchElementException)
             {
                 MessageToConsole.RedMessage("[FindElementById] NO");
             }
@@ -48,15 +58,20 @@ namespace SeleniumTasks
         {
             IWebDriver driver = new ChromeDriver();
             driver.Navigate().GoToUrl(url);
+            IWebElement element;
 
-            IWebElement element = driver.FindElement(By.ClassName(className));
-
-            if(element.Displayed)
+            try
             {
-                MessageToConsole.GreenMessage("[FindElementByClassName] YES");
-                MessageToConsole.GreenMessage($"[FindElementByClassName] {element.Text}");
+                element = driver.FindElement(By.ClassName(className));
+
+                if(element.Displayed)
+                {
+                    MessageToConsole.GreenMessage("[FindElementByClassName] YES");
+                    MessageToConsole.GreenMessage($"[FindElementByClassName] {element.Text}");
+                }
+            
             }
-            else
+            catch(NoSuchElementException)
             {
                 MessageToConsole.RedMessage("[FindElementByClassName] NO");
             }
@@ -68,14 +83,16 @@ namespace SeleniumTasks
         {
             IWebDriver driver = new ChromeDriver();
             driver.Navigate().GoToUrl(url);
+            IWebElement element;
 
-            IWebElement element = driver.FindElement(By.CssSelector(cssPath));
-
-            if(element.Displayed)
+            try
             {
-                MessageToConsole.GreenMessage("[FindElementByCssPath] YES");
+                element = driver.FindElement(By.CssSelector(cssPath));
+
+                if(element.Displayed){MessageToConsole.GreenMessage("[FindElementByCssPath] YES");}
+            
             }
-            else
+            catch(NoSuchElementException)
             {
                 MessageToConsole.RedMessage("[FindElementByCssPath] NO");
             }
@@ -87,14 +104,16 @@ namespace SeleniumTasks
         {
             IWebDriver driver = new ChromeDriver();
             driver.Navigate().GoToUrl(url);
+            IWebElement element;
 
-            IWebElement element = driver.FindElement(By.XPath(xPath));
-
-            if(element.Displayed)
+            try
             {
-                MessageToConsole.GreenMessage("[FindElementByXPath] YES");
+                element = driver.FindElement(By.XPath(xPath));
+
+                if(element.Displayed){MessageToConsole.GreenMessage("[FindElementByXPath] YES");}
+            
             }
-            else
+            catch(NoSuchElementException)
             {
                 MessageToConsole.RedMessage("[FindElementByXPath] NO");
             }
