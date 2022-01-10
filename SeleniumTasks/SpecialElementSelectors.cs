@@ -15,6 +15,17 @@ namespace SeleniumTasks
     {
         public static IWebDriver driver;
 
+        public static void SetDriverAndUrl(string url)
+        {
+            driver = new ChromeDriver();
+            driver.Navigate().GoToUrl(url); 
+        }
+
+        public static void Quite()
+        {
+            driver.Quit();
+        }
+
         public static IWebElement FindTextInputField(FindBy findBy, string whatSearch)
         {
             IWebElement textField = null;
