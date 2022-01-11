@@ -1,5 +1,6 @@
 using System;
 using System.Threading;
+using System.Collections.Generic;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 
@@ -29,7 +30,7 @@ namespace SeleniumTasks
             driver.Navigate().GoToUrl(url); 
         }
 
-        public static void Quite()
+        public static void Quit()
         {
             driver.Quit();
         }
@@ -53,6 +54,74 @@ namespace SeleniumTasks
             }
             
             return textField;
+        }
+
+        public static List<IWebElement> FindListRadioButtonsByCssSelector(string whatSearch)
+        {
+            List<IWebElement> listRadioButtons = new List<IWebElement>();
+            IWebElement webElement = null;
+            int i=1;
+            do
+            {
+                try
+                {
+                    webElement = driver.FindElement(By.CssSelector(whatSearch + "(" + i + ")"));
+                    bool isChecked = true ? webElement.GetAttribute("checked") == "true" : false;
+                    MessageToConsole.GreenMessage($"[FindListRadioButtonsByCssSelector] found, value = {webElement.GetAttribute("value")}, isChecked = {isChecked}");
+                    i+=2;
+                    listRadioButtons.Add(webElement);
+                }
+                catch(NoSuchElementException)
+                {
+                    break;
+                }
+            }
+            while(true);
+
+            return listRadioButtons;
+        }
+
+        public static void PrintValueEachRadioButtonInList(List<IWebElement> list)
+        {
+            foreach (var item in list)
+            {
+                bool isChecked = true ? item.GetAttribute("checked") == "true" : false;
+                MessageToConsole.GreenMessage($"[PrintValueEachRadioButtonInList] value = {item.GetAttribute("value")}, isChecked = {isChecked}");
+            }   
+        }
+
+         public static List<IWebElement> GetListElementsFromDropDownMenu(string whatSearch)
+        {
+            List<IWebElement> list = new List<IWebElement>();
+            IWebElement webElement = null;
+            int i=1;
+            do
+            {
+                try
+                {
+                    webElement = driver.FindElement(By.CssSelector(whatSearch + "(" + i + ")"));
+                    MessageToConsole.GreenMessage($"[GetListElementsFromDropDownMenu] found, value = {webElement.GetAttribute("value")}");
+                    i+=1;
+                    list.Add(webElement);
+                }
+                catch(NoSuchElementException)
+                {
+                    break;
+                }
+            }
+            while(true);
+
+            return list;
+        }
+
+        public static void PrintEachElementFromDropDownMenuAndChooseItOneByOne(List<IWebElement> elementsFromDropDownMenu)
+        {
+            foreach (var item in elementsFromDropDownMenu)
+            {
+                MessageToConsole.GreenMessage($"[PrintEachElementFromDropDownMenuAndChooseItOneByOne] value = {item.GetAttribute("value")}");
+                item.Click();
+                Thread.Sleep(5000);
+            }
         }
           public static void GetValueFromSpecialElementSelector(IWebElement webElement, out string text)
         {
