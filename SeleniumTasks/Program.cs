@@ -8,16 +8,17 @@ namespace SeleniumTasks
     {
         public static void ScenarioForSpecialElementSelectors()
         {
-            SpecialElementSelector.SetDriverAndUrl("https://testing.todorvachev.com/text-input-field/"); 
-
-            IWebElement textInputField = SpecialElementSelector.FindTextInputField(FindBy.Name, whatSearch:"username");
-
-            SpecialElementSelector.SetValueToTextInputField(textField: textInputField, "Hello!");
-
-            SpecialElementSelector.GetValueFromTextInputField(textInputField, out string text1);
+            SpecialElementSelector.SetDriverAndUrl("https://testing.todorvachev.com/check-button-test-3/"); 
+            IWebElement webElement = SpecialElementSelector.FindSpecialElementSelector(FindBy.CssSelector, whatSearch:"#post-33 > div > p:nth-child(8) > input[type=checkbox]:nth-child(1)");
+            // SpecialElementSelector.SetValueToTextInputField(textField: webElement, "Hello!");
+            SpecialElementSelector.GetValueFromSpecialElementSelector(webElement, out string text1);
             MessageToConsole.GreenMessage(text1);
-
+            SpecialElementSelector.SetCheckBox(webElement, StatusOfCheckBox.Checked);
             SpecialElementSelector.Quite();
+
+
+
+
         }
         static void Main()
         {
