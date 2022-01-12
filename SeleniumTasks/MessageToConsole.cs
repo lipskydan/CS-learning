@@ -1,6 +1,6 @@
 namespace SeleniumTasks
 {
-    class MessageToConsole
+    static class MessageToConsole
     {
         public static void RedMessage(string message)
         {
