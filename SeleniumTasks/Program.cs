@@ -9,7 +9,7 @@ namespace SeleniumTasks
     {
         public static void ScenarioForSpecialElementSelectors()
         {
-            SpecialElementSelector.SetDriverAndUrl("https://testing.todorvachev.com/text-input-field/");
+            SpecialElementSelector.SetDriverAndUrl("https://testing.todorvachev.com/alert-box/");
             // IWebElement webElement = SpecialElementSelector.FindSpecialElementSelector(FindBy.CssSelector, whatSearch:"#post-33 > div > p:nth-child(8) > input[type=checkbox]:nth-child(1)");
             // SpecialElementSelector.SetValueToTextInputField(textField: webElement, "Hello!");
             // SpecialElementSelector.GetValueFromSpecialElementSelector(webElement, out string text1);
