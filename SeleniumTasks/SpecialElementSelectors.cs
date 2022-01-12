@@ -192,6 +192,40 @@ namespace SeleniumTasks
             Thread.Sleep(5000);
         }
 
+        public static void GetTextFromAlertAndAcceptItAndCheckIfImageDisplayedInPage(string cssPathToImage)
+        {
+            IAlert alert = null;
+            
+            try
+            {
+                alert = driver.SwitchTo().Alert();
+                MessageToConsole.GreenMessage("[GetTextFromAlertAndAcceptItAndCheckIfImageDisplayedInPage]" + " alert text: " + alert.Text);
+
+                alert.Accept();
+                MessageToConsole.GreenMessage("[GetTextFromAlertAndAcceptItAndCheckIfImageDisplayedInPage] alert is accepted");
+            }
+            catch(NoAlertPresentException)
+            {
+                MessageToConsole.RedMessage("[GetTextFromAlertAndAcceptItAndCheckIfImageDisplayedInPage] there is NOT alert on the page");
+            }
+
+            IWebElement image = null;
+
+            try
+            {
+                image = driver.FindElement(By.CssSelector(cssPathToImage));
+
+                if(image.Displayed)
+                {
+                    MessageToConsole.GreenMessage("[GetTextFromAlertAndAcceptItAndCheckIfImageDisplayedInPage] image is presented");
+                }
+            }
+            catch(NoSuchElementException)
+            {
+                MessageToConsole.RedMessage("[GetTextFromAlertAndAcceptItAndCheckIfImageDisplayedInPage] image is NOT presented");
+            }
+        }
+
 
 
       
