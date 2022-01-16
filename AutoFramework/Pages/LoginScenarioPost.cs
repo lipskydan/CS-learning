@@ -3,9 +3,9 @@ namespace AutoFramework.Pages
     using OpenQA.Selenium;
     using SeleniumExtras.PageObjects;
 
-    class TestScenariosPost
+    class LoginScenariosPost
     {
-        public TestScenariosPost()
+        public LoginScenariosPost()
         {
             PageFactory.InitElements(Driver.driver, this);
         }

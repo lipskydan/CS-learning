@@ -14,7 +14,7 @@ namespace AutoFramework
 
         public static void FillLoginForm(string username, string password, string repeatpassword)
         {
-            TestScenariosPost testScenariosPost = new TestScenariosPost();
+            LoginScenariosPost testScenariosPost = new LoginScenariosPost();
 
             testScenariosPost.UserName.Clear();
             testScenariosPost.UserName.SendKeys(username);
@@ -26,6 +26,11 @@ namespace AutoFramework
             testScenariosPost.RepeatPassword.SendKeys(repeatpassword);
 
             testScenariosPost.LoginButton.Click();
+        }
+
+        public static void FillRegisterForm(string userid, string password, string name, string address, string country, string zipCode, string email, string sex, bool speakEnglish)
+        {
+            
         }
     }
 }

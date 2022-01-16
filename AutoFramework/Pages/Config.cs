@@ -12,6 +12,21 @@ namespace AutoFramework
                 public static string Email = "example@example.com";
                 public static string Username = "Username";
                 public static string Password = "password123!";
+
+                public static class Country
+                {
+                    public static string Australia = "AF";
+                    public static string Canada = "AL";
+                    public static string India = "DZ";
+                    public static string Russia = "AS";
+                    public static string USA = "AD";
+                }
+
+                public static class Sex
+                {
+                    public static string Male = "Male";
+                    public static string Female = "Female";
+                }
             }
 
             public static class Invalid
