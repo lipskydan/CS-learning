@@ -56,6 +56,14 @@ namespace AutoFramework
             public static string About = "About";
         }
 
+        public static class HomePage
+        {
+            public static string HeaderText = "SELENIUM WEBDRIVER WITH C#";
+            public static string SubHeaderText = "LEARN HOW TO WRITE TESTS WITH SELENIUM IN C#";
+            public static string HeadlineText = "Introduction";
+            
+        }
+
         public static class AlertsTexts
         {
             public static string UsernameLengthOutOfRange = "User Id should not be empty / length be between 5 to 12";

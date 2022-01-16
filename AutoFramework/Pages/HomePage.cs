@@ -10,10 +10,10 @@
             PageFactory.InitElements(Driver.driver, this);
         }
 
-        [FindsBy(How = How.CssSelector, Using = "#mh-mobile > div > header > div.mh-container.mh-container-inner.mh-row.clearfix > div > a > div > div > h1")]
+        [FindsBy(How = How.ClassName, Using = "mh-header-title")]
         public IWebElement Header { get; set; }
 
-        [FindsBy(How = How.CssSelector, Using = "#mh-mobile > div > header > div.mh-container.mh-container-inner.mh-row.clearfix > div > a > div > div > h2")]
+        [FindsBy(How = How.ClassName, Using = "mh-header-tagline")]
         public IWebElement SubHeader { get; set; }
 
         [FindsBy(How = How.CssSelector, Using = "#page-17 > div > p:nth-child(1) > a > img")]
