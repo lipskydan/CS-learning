@@ -43,7 +43,7 @@ namespace AutoFramework
 
             registerScenariosPost.Address.Clear();
             registerScenariosPost.Address.SendKeys(address);
-
+            
             RegisterScenariosPost.GetCountry(value: country, registerScenariosPost.CountriesList).Click();
 
             registerScenariosPost.ZipCode.Clear();

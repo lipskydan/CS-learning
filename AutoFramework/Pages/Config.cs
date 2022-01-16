@@ -16,7 +16,7 @@ namespace AutoFramework
                 public static string Password = "password123!";
                 public static string Name = "danyil";
                 public static string Address = "Address_one";
-                public static int ZipCode = 777;
+                public static string ZipCode = "777";
 
                 public static class Country
                 {
