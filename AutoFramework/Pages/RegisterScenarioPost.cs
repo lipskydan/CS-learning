@@ -19,12 +19,12 @@ namespace AutoFramework.Pages
         public IWebElement Password {get; set;}
 
         [FindsBy(How = How.Name, Using = "username")]
-        public IWebElement UserName {get; set;}
+        public IWebElement Name {get; set;}
 
         [FindsBy(How = How.Name, Using = "address")]
         public IWebElement Address {get; set;}
 
-        private List<IWebElement> CountriesList {get; set;}
+        public List<IWebElement> CountriesList {get; set;}
 
         [FindsBy(How = How.Name, Using = "zip")]
         public IWebElement ZipCode {get; set;}

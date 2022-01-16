@@ -5,6 +5,8 @@ namespace AutoFramework
         public static int ElementsWaitingTimeout = 5;
         public static string BaseURL = "http://testing.todorvachev.com";
 
+        
+
         public static class Credentials
         {
             public static class Valid
@@ -12,6 +14,9 @@ namespace AutoFramework
                 public static string Email = "example@example.com";
                 public static string Username = "Username";
                 public static string Password = "password123!";
+                public static string Name = "danyil";
+                public static string Address = "Address_one";
+                public static int ZipCode = 777;
 
                 public static class Country
                 {
@@ -21,12 +26,13 @@ namespace AutoFramework
                     public static string Russia = "AS";
                     public static string USA = "AD";
                 }
-
+        
                 public static class Sex
                 {
                     public static string Male = "Male";
                     public static string Female = "Female";
                 }
+
             }
 
             public static class Invalid
@@ -84,6 +90,8 @@ namespace AutoFramework
             public static string UsernameLengthOutOfRange = "User Id should not be empty / length be between 5 to 12";
             public static string PasswordLenghtOutOfRange = "Password should not be empty / length be between 5 to 12";
             public static string SuccessfulLogin = "Succesful login!";
+            public static string NameMustHaveAlphabetCharatersOnly = "Username must have alphabet characters only"; 
+            public static string AddressMustHaveAlphabetCharatersOnly = "User address must have alphabet characters only"; 
         }
     }
     

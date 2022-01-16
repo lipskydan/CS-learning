@@ -30,7 +30,41 @@ namespace AutoFramework
 
         public static void FillRegisterForm(string userid, string password, string name, string address, string country, string zipCode, string email, string sex, bool speakEnglish)
         {
-            
+            RegisterScenariosPost registerScenariosPost = new RegisterScenariosPost();
+
+            registerScenariosPost.UserId.Clear();
+            registerScenariosPost.UserId.SendKeys(userid);
+
+            registerScenariosPost.Password.Clear();
+            registerScenariosPost.Password.SendKeys(password);
+
+            registerScenariosPost.Name.Clear();
+            registerScenariosPost.Name.SendKeys(name);
+
+            registerScenariosPost.Address.Clear();
+            registerScenariosPost.Address.SendKeys(address);
+
+            RegisterScenariosPost.GetCountry(value: country, registerScenariosPost.CountriesList).Click();
+
+            registerScenariosPost.ZipCode.Clear();
+            registerScenariosPost.ZipCode.SendKeys(zipCode);
+
+            registerScenariosPost.Email.Clear();
+            registerScenariosPost.Email.SendKeys(email);
+
+            if(sex == Config.Credentials.Valid.Sex.Male)
+            {
+                registerScenariosPost.SexMale.Click();
+            }
+            else
+            {
+                registerScenariosPost.SexFemale.Click();
+            }
+
+            if (speakEnglish)
+            {
+                registerScenariosPost.SpeakEnglish.Click();
+            }
         }
     }
 }
