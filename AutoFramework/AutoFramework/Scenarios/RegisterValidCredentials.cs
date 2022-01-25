@@ -19,7 +19,16 @@ namespace AutoFramework
         [TestCase]
         public void SuccessfulRegister()
         {
-            Actions.FillRegisterForm(userid:Config.Credentials.Valid.Username, password:Config.Credentials.Valid.Password, name:Config.Credentials.Valid.Name, address:Config.Credentials.Valid.Address, country:Config.Credentials.Valid.Country.India, zipCode:Config.Credentials.Valid.ZipCode, email:Config.Credentials.Valid.Email, sex:Config.Credentials.Valid.Sex.Male, speakEnglish: true, driver:Driver);
+            Actions.FillRegisterForm(userid:Config.Credentials.Valid.Username, 
+                                     password:Config.Credentials.Valid.Password, 
+                                     name:Config.Credentials.Valid.Name, 
+                                     address:Config.Credentials.Valid.Address, 
+                                     country:Config.Credentials.Valid.Country.India, 
+                                     zipCode:Config.Credentials.Valid.ZipCode, 
+                                     email:Config.Credentials.Valid.Email, 
+                                     sex:Config.Credentials.Valid.Sex.Male, 
+                                     speakEnglish: true, 
+                                     driver:Driver);
             
             try 
             {
