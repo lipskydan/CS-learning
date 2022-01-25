@@ -5,8 +5,6 @@ namespace AutoFramework
         public static int ElementsWaitingTimeout = 5;
         public static string BaseURL = "http://testing.todorvachev.com";
 
-        
-
         public static class Credentials
         {
             public static class Valid
@@ -32,7 +30,6 @@ namespace AutoFramework
                     public static string Male = "Male";
                     public static string Female = "Female";
                 }
-
             }
 
             public static class Invalid
@@ -82,7 +79,6 @@ namespace AutoFramework
             public static string HeaderText = "SELENIUM WEBDRIVER WITH C#";
             public static string SubHeaderText = "LEARN HOW TO WRITE TESTS WITH SELENIUM IN C#";
             public static string HeadlineText = "Introduction";
-            
         }
 
         public static class AlertsTexts
@@ -92,6 +88,8 @@ namespace AutoFramework
             public static string SuccessfulLogin = "Succesful login!";
             public static string NameMustHaveAlphabetCharatersOnly = "Username must have alphabet characters only"; 
             public static string AddressMustHaveAlphabetCharatersOnly = "User address must have alphabet characters only"; 
+            public static string SelectCountryFromList = "Select your country from the list";
+            public static string ZipFormat = "ZIP code must have numeric characters only";
         }
     }
     
