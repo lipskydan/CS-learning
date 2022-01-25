@@ -4,6 +4,11 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Selenium.WebDriver" Version="4.1.0"/>
+    <PackageReference Include="Selenium.WebDriver" Version="4.0.0-alpha07"/>
+    <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="98.0.4758.4800-beta"/>
+    <PackageReference Include="Selenium.InternetExplorer.WebDriver" Version="3.150.1"/>
+    <PackageReference Include="Selenium.Mozilla.Firefox.Webdriver" Version="0.6.0.1"/>
+    <PackageReference Include="Selenium.Opera.WebDriver" Version="2.30.0"/>
+    <PackageReference Include="Selenium.Chrome.WebDriver" Version="84.0.0"/>
   </ItemGroup>
 </Project>

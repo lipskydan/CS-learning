@@ -6,10 +6,10 @@ namespace AutoFramework.Pages
 
     class RegisterScenariosPost
     {
-        public RegisterScenariosPost()
+        public RegisterScenariosPost(IWebDriver driver)
         {
-            PageFactory.InitElements(Driver.driver, this);
-            CountriesList = GetDropDownMenuCountries(whatSearch: "#post-70 > div > form > ul > li:nth-child(10) > select > option:nth-child");
+            PageFactory.InitElements(driver, this);
+            CountriesList = GetDropDownMenuCountries(whatSearch: "#post-70 > div > form > ul > li:nth-child(10) > select > option:nth-child", driver);
         }
 
         [FindsBy(How = How.Name, Using = "userid")]
@@ -41,14 +41,14 @@ namespace AutoFramework.Pages
         [FindsBy(How = How.Name, Using = "languageQuestion")]
         public IWebElement SpeakEnglish {get; set;}
 
-        private static List<IWebElement> GetDropDownMenuCountries(string whatSearch)
+        private static List<IWebElement> GetDropDownMenuCountries(string whatSearch, IWebDriver driver)
         {
             List<IWebElement> list = new List<IWebElement>();
             IWebElement webElement = null;
             int i=2;
             while(i<=6)
             {
-                webElement = Driver.driver.FindElement(By.CssSelector(whatSearch + "(" + i + ")"));
+                webElement = driver.FindElement(By.CssSelector(whatSearch + "(" + i + ")"));
                 i+=1;
                 list.Add(webElement);
             }

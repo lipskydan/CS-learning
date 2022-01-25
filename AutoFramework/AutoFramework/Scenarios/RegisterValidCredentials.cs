@@ -6,23 +6,24 @@ namespace AutoFramework
     public class RegisterValidCredentials
     {
         IAlert alert;
+        public IWebDriver Driver {get; set;}
         public RegisterValidCredentials(){}
 
         [OneTimeSetUp]
         public void Initialize()
         {
-            Actions.InitializeDriver();
-            NavigateTo.RegisterFormScenario();
+            Driver = Actions.InitializeDriver();
+            NavigateTo.RegisterFormScenario(Driver);
         }
 
         [TestCase]
         public void SuccessfulRegister()
         {
-            Actions.FillRegisterForm(userid:Config.Credentials.Valid.Username, password:Config.Credentials.Valid.Password, name:Config.Credentials.Valid.Name, address:Config.Credentials.Valid.Address, country:Config.Credentials.Valid.Country.India, zipCode:Config.Credentials.Valid.ZipCode, email:Config.Credentials.Valid.Email, sex:Config.Credentials.Valid.Sex.Male, speakEnglish: true);
+            Actions.FillRegisterForm(userid:Config.Credentials.Valid.Username, password:Config.Credentials.Valid.Password, name:Config.Credentials.Valid.Name, address:Config.Credentials.Valid.Address, country:Config.Credentials.Valid.Country.India, zipCode:Config.Credentials.Valid.ZipCode, email:Config.Credentials.Valid.Email, sex:Config.Credentials.Valid.Sex.Male, speakEnglish: true, driver:Driver);
             
             try 
             {
-                alert = Driver.driver.SwitchTo().Alert();
+                alert = Driver.SwitchTo().Alert();
             }
             catch(NoAlertPresentException)
             {
@@ -35,7 +36,7 @@ namespace AutoFramework
         [OneTimeTearDown]
         public void CleanUp()
         {
-            Driver.driver.Quit();
+            Driver.Quit();
         }
     }
 }

@@ -6,39 +6,40 @@
 
     public class VerifyHomePageElements
     {
-            public VerifyHomePageElements(){}
+        public IWebDriver Driver {get; set;}
+        public VerifyHomePageElements(){}
 
         [OneTimeSetUp]
         public void Initialize()
         {
-            Actions.InitializeDriver();
+            Driver = Actions.InitializeDriver();
         }
 
         [TestCase]
         public void VerifyHeaderText()
         {
-           HomePage homePage = new HomePage();
+           HomePage homePage = new HomePage(Driver);
            Assert.AreEqual(expected:homePage.Header.Text, actual:Config.HomePage.HeaderText);
         }
 
         [TestCase]
         public void VerifySubHeaderText()
         {
-           HomePage homePage = new HomePage();
+           HomePage homePage = new HomePage(Driver);
            Assert.AreEqual(expected:homePage.SubHeader.Text, actual:Config.HomePage.SubHeaderText);
         }
 
         [TestCase]
         public void VerifyHeadlineText()
         {
-           HomePage homePage = new HomePage();
+           HomePage homePage = new HomePage(Driver);
            Assert.AreEqual(expected:homePage.Headline.Text, actual:Config.HomePage.HeadlineText);
         }
 
         [OneTimeTearDown]
         public void CleanUp()
         {
-            Driver.driver.Quit();
+            Driver.Quit();
         }
     }
 }

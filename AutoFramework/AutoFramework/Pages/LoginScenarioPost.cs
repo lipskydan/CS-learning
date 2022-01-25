@@ -5,9 +5,9 @@ namespace AutoFramework.Pages
 
     class LoginScenariosPost
     {
-        public LoginScenariosPost()
+        public LoginScenariosPost(IWebDriver driver)
         {
-            PageFactory.InitElements(Driver.driver, this);
+            PageFactory.InitElements(driver, this);
         }
 
         [FindsBy(How = How.Name, Using = "userid")]
