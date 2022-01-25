@@ -19,7 +19,11 @@
         [TestCase]
         public void SuccessfulLogin()
         {
-            Actions.FillLoginForm(username: Config.Credentials.Valid.Username, password: Config.Credentials.Valid.Password, repeatpassword: Config.Credentials.Valid.Password,driver:Driver);
+            Actions.FillLoginForm(username: Config.Credentials.Valid.Username, 
+                                  password: Config.Credentials.Valid.Password, 
+                                  repeatpassword: Config.Credentials.Valid.Password,
+                                  driver:Driver);
+
             alert = Driver.SwitchTo().Alert();
             Assert.AreEqual(expected:Config.AlertsTexts.SuccessfulLogin, actual:alert.Text);
         }
