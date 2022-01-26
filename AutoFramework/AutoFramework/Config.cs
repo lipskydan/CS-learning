@@ -78,7 +78,8 @@ namespace AutoFramework
         public static class AlertsTexts
         {
             public static string UsernameLengthOutOfRange = "User Id should not be empty / length be between 5 to 12";
-            public static string PasswordLenghtOutOfRange = "Password should not be empty / length be between 7 to 12";
+            public static string PasswordLoginLenghtOutOfRange = "Password should not be empty / length be between 5 to 12";
+            public static string PasswordRegisterLenghtOutOfRange = "Password should not be empty / length be between 7 to 12";
             public static string SuccessfulLogin = "Succesful login!";
             public static string NameMustHaveAlphabetCharatersOnly = "Username must have alphabet characters only"; 
             public static string AddressMustHaveAlphabetCharatersOnly = "User address must have alphabet characters only"; 

@@ -3,6 +3,7 @@
     using OpenQA.Selenium;
     using NUnit.Framework;
 
+    [Parallelizable]
     public class LoginInvalidUsername
     {
         IAlert alert;

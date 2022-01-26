@@ -3,6 +3,7 @@
     using OpenQA.Selenium;
     using NUnit.Framework;
 
+    [Parallelizable]
     public class LoginInvalidPassword
     {
         IAlert alert;
@@ -26,7 +27,7 @@
 
             alert = Driver.SwitchTo().Alert();
 
-            Assert.AreEqual(expected: Config.AlertsTexts.PasswordLenghtOutOfRange, actual: alert.Text);
+            Assert.AreEqual(expected: Config.AlertsTexts.PasswordLoginLenghtOutOfRange, actual: alert.Text);
 
             alert.Accept();
         }
@@ -40,7 +41,7 @@
                                   driver: Driver);
 
             alert = Driver.SwitchTo().Alert();
-            Assert.AreEqual(expected: Config.AlertsTexts.PasswordLenghtOutOfRange, actual: alert.Text);
+            Assert.AreEqual(expected: Config.AlertsTexts.PasswordLoginLenghtOutOfRange, actual: alert.Text);
             alert.Accept();
         }
 

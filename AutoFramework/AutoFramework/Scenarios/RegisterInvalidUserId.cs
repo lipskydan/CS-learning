@@ -9,6 +9,8 @@ namespace AutoFramework.Scenarios
     using OpenQA.Selenium;
     using NUnit.Framework;
     using System.Threading;
+
+    [Parallelizable]
     public class RegisterInvalidUserId
     {
         IAlert alert;

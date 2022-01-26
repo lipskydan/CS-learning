@@ -8,6 +8,8 @@ namespace AutoFramework.Scenarios
 {
     using OpenQA.Selenium;
     using NUnit.Framework;
+
+    [Parallelizable]
     public class RegisterInvalidPassword
     {
         IAlert alert;
@@ -36,7 +38,7 @@ namespace AutoFramework.Scenarios
                                      driver: Driver);
 
             alert = Driver.SwitchTo().Alert();
-            Assert.AreEqual(expected: Config.AlertsTexts.PasswordLenghtOutOfRange, actual: alert.Text);
+            Assert.AreEqual(expected: Config.AlertsTexts.PasswordRegisterLenghtOutOfRange, actual: alert.Text);
             alert.Accept();
         }
 
@@ -55,7 +57,7 @@ namespace AutoFramework.Scenarios
                                       driver: Driver);
 
             alert = Driver.SwitchTo().Alert();
-            Assert.AreEqual(expected: Config.AlertsTexts.PasswordLenghtOutOfRange, actual: alert.Text);
+            Assert.AreEqual(expected: Config.AlertsTexts.PasswordRegisterLenghtOutOfRange, actual: alert.Text);
             alert.Accept();
         }
 
@@ -74,7 +76,7 @@ namespace AutoFramework.Scenarios
                                      driver: Driver);
 
             alert = Driver.SwitchTo().Alert();
-            Assert.AreEqual(expected: Config.AlertsTexts.PasswordLenghtOutOfRange, actual: alert.Text);
+            Assert.AreEqual(expected: Config.AlertsTexts.PasswordRegisterLenghtOutOfRange, actual: alert.Text);
             alert.Accept();
         }
 

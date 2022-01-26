@@ -4,6 +4,7 @@
     using NUnit.Framework;
     using Pages;
 
+    [Parallelizable]
     public class VerifyHomePageElements
     {
         public IWebDriver Driver { get; set; }
