@@ -5,17 +5,15 @@ namespace AutoFramework
         public static int ElementsWaitingTimeout = 5;
         public static string BaseURL = "http://testing.todorvachev.com";
 
-        
-
         public static class Credentials
         {
             public static class Valid
             {
                 public static string Email = "example@example.com";
                 public static string Username = "Username";
-                public static string Password = "password123!";
+                public static string Password = "password123";
                 public static string Name = "danyil";
-                public static string Address = "Address_one";
+                public static string Address = "Addressone";
                 public static string ZipCode = "777";
 
                 public static class Country
@@ -32,7 +30,6 @@ namespace AutoFramework
                     public static string Male = "Male";
                     public static string Female = "Female";
                 }
-
             }
 
             public static class Invalid
@@ -49,20 +46,14 @@ namespace AutoFramework
                 {
                     public static string FourCharacters = "abcd";
                     public static string ThirteenCharacters = "abcdabcdabcda";
-                    public static string OnlyLetters = "abcdabcd";
-                    public static string OnlyNumbers = "123456789";
-                    public static string OnlySpecialSymbols = "$#@%)(*$%#%?><";
-                    public static string NoSpecialSymbol = "asd1234";
+                    public static string OnlyNotAlphabetCharacter = "asd%#34";
                 }
 
                 public static class Password
                 {
                     public static string FourCharacters = "abcd";
                     public static string ThirteenCharacters = "abcdabcdabcda";
-                    public static string OnlyLetters = "abcdabcd";
-                    public static string OnlyNumbers = "123456789";
-                    public static string OnlySpecialSymbols = "$#@%)(*$%#%?><";
-                    public static string NoSpecialSymbol = "asd1234";
+                    public static string EmptyField = "";
                 }
             }
         }
@@ -82,16 +73,18 @@ namespace AutoFramework
             public static string HeaderText = "SELENIUM WEBDRIVER WITH C#";
             public static string SubHeaderText = "LEARN HOW TO WRITE TESTS WITH SELENIUM IN C#";
             public static string HeadlineText = "Introduction";
-            
         }
 
         public static class AlertsTexts
         {
             public static string UsernameLengthOutOfRange = "User Id should not be empty / length be between 5 to 12";
-            public static string PasswordLenghtOutOfRange = "Password should not be empty / length be between 5 to 12";
+            public static string PasswordLoginLenghtOutOfRange = "Password should not be empty / length be between 5 to 12";
+            public static string PasswordRegisterLenghtOutOfRange = "Password should not be empty / length be between 7 to 12";
             public static string SuccessfulLogin = "Succesful login!";
             public static string NameMustHaveAlphabetCharatersOnly = "Username must have alphabet characters only"; 
             public static string AddressMustHaveAlphabetCharatersOnly = "User address must have alphabet characters only"; 
+            public static string SelectCountryFromList = "Select your country from the list";
+            public static string ZipFormat = "ZIP code must have numeric characters only";
         }
     }
     

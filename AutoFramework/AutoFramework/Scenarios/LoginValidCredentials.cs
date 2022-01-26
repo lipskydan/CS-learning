@@ -1,13 +1,14 @@
- namespace AutoFramework 
+﻿namespace AutoFramework
 {
     using OpenQA.Selenium;
     using NUnit.Framework;
 
+    [Parallelizable]
     public class LoginValidCredentials
     {
         IAlert alert;
-        public IWebDriver Driver {get; set;}
-        public LoginValidCredentials(){}
+        public IWebDriver Driver { get; set; }
+        public LoginValidCredentials() { }
 
         [OneTimeSetUp]
         public void Initialize()
@@ -19,13 +20,13 @@
         [TestCase]
         public void SuccessfulLogin()
         {
-            Actions.FillLoginForm(username: Config.Credentials.Valid.Username, 
-                                  password: Config.Credentials.Valid.Password, 
+            Actions.FillLoginForm(username: Config.Credentials.Valid.Username,
+                                  password: Config.Credentials.Valid.Password,
                                   repeatpassword: Config.Credentials.Valid.Password,
-                                  driver:Driver);
+                                  driver: Driver);
 
             alert = Driver.SwitchTo().Alert();
-            Assert.AreEqual(expected:Config.AlertsTexts.SuccessfulLogin, actual:alert.Text);
+            Assert.AreEqual(expected: Config.AlertsTexts.SuccessfulLogin, actual: alert.Text);
         }
 
         [OneTimeTearDown]
