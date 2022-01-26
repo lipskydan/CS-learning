@@ -67,6 +67,8 @@ namespace AutoFramework
             {
                 registerScenariosPost.SpeakEnglish.Click();
             }
+
+            registerScenariosPost.RegisterButton.Click();
         }
     }
 }

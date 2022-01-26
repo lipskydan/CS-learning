@@ -41,6 +41,9 @@ namespace AutoFramework.Pages
         [FindsBy(How = How.Name, Using = "languageQuestion")]
         public IWebElement SpeakEnglish {get; set;}
 
+        [FindsBy(How = How.Name, Using = "submit")]
+        public IWebElement RegisterButton { get; set; }
+
         private static List<IWebElement> GetDropDownMenuCountries(string whatSearch, IWebDriver driver)
         {
             List<IWebElement> list = new List<IWebElement>();

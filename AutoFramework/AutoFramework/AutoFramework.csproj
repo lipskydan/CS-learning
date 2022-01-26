@@ -71,6 +71,8 @@
     <Compile Include="Scenarios\LoginInvalidPassword.cs" />
     <Compile Include="Scenarios\LoginInvalidUsername.cs" />
     <Compile Include="Scenarios\LoginValidCredentials.cs" />
+    <Compile Include="Scenarios\RegisterInvalidPassword.cs" />
+    <Compile Include="Scenarios\RegisterInvalidUserId.cs" />
     <Compile Include="Scenarios\RegisterValidCredentials.cs" />
     <Compile Include="Scenarios\VerifyHomePageElements.cs" />
   </ItemGroup>

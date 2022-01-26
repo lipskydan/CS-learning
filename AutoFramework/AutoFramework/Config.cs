@@ -11,9 +11,9 @@ namespace AutoFramework
             {
                 public static string Email = "example@example.com";
                 public static string Username = "Username";
-                public static string Password = "password123!";
+                public static string Password = "password123";
                 public static string Name = "danyil";
-                public static string Address = "Address_one";
+                public static string Address = "Addressone";
                 public static string ZipCode = "777";
 
                 public static class Country
@@ -46,20 +46,14 @@ namespace AutoFramework
                 {
                     public static string FourCharacters = "abcd";
                     public static string ThirteenCharacters = "abcdabcdabcda";
-                    public static string OnlyLetters = "abcdabcd";
-                    public static string OnlyNumbers = "123456789";
-                    public static string OnlySpecialSymbols = "$#@%)(*$%#%?><";
-                    public static string NoSpecialSymbol = "asd1234";
+                    public static string OnlyNotAlphabetCharacter = "asd%#34";
                 }
 
                 public static class Password
                 {
                     public static string FourCharacters = "abcd";
                     public static string ThirteenCharacters = "abcdabcdabcda";
-                    public static string OnlyLetters = "abcdabcd";
-                    public static string OnlyNumbers = "123456789";
-                    public static string OnlySpecialSymbols = "$#@%)(*$%#%?><";
-                    public static string NoSpecialSymbol = "asd1234";
+                    public static string EmptyField = "";
                 }
             }
         }
@@ -84,7 +78,7 @@ namespace AutoFramework
         public static class AlertsTexts
         {
             public static string UsernameLengthOutOfRange = "User Id should not be empty / length be between 5 to 12";
-            public static string PasswordLenghtOutOfRange = "Password should not be empty / length be between 5 to 12";
+            public static string PasswordLenghtOutOfRange = "Password should not be empty / length be between 7 to 12";
             public static string SuccessfulLogin = "Succesful login!";
             public static string NameMustHaveAlphabetCharatersOnly = "Username must have alphabet characters only"; 
             public static string AddressMustHaveAlphabetCharatersOnly = "User address must have alphabet characters only"; 
